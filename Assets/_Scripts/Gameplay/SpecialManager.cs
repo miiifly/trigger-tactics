@@ -1,12 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TriggerTactics.Gameplay.Spawn;
 using UnityEngine;
+using Zenject;
 
 namespace TriggerTactics.Gameplay.Special
 {
     public class SpecialManager : MonoBehaviour
     {
+        [Inject]
+        private ISpawner<BaseSpecial> _specialSpawner;
+
         [SerializeField]
         private List<SpecialType> _firstPlayerSpecials = new List<SpecialType>();
         [SerializeField]
